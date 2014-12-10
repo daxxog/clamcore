@@ -1,7 +1,7 @@
 {
-  "name": "bitcore",
-  "description": "Bitcoin Library",
-  "version": "0.1.41",
+  "name": "clamcore",
+  "description": "CLAMS Library",
+  "version": "0.1.0",
   "author": {
     "name": "Stephen Pair",
     "email": "stephen@bitpay.com"
@@ -34,20 +34,24 @@
     {
       "name": "Esteban Ordano",
       "email": "eordano@gmail.com"
+    },
+    {
+      "name": "Tyler Willis",
+      "email": "kefkius@mail.com"
     }
   ],
   "keywords": [
-    "bitcoin",
-    "btc",
+    "clams",
+    "clam",
     "satoshi",
     "money",
     "currency",
     "virtual"
   ],
-  "main": "bitcore.js",
+  "main": "clamcore.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/kefkius/clamcore.git"
   },
   "scripts": {
     "install": "node-gyp rebuild",

@@ -17,14 +17,14 @@ var requireWhenAccessed = function(name, file) {
 requireWhenAccessed('Bignum', 'bignum');
 Object.defineProperty(module.exports, 'bignum', {
   get: function() {
-    console.log('bignum (with a lower-case "b") is deprecated. Use bitcore.Bignum (capital "B") instead.');
+    console.log('bignum (with a lower-case "b") is deprecated. Use clamcore.Bignum (capital "B") instead.');
     return require('bignum');
   }
 });
 requireWhenAccessed('Base58', './lib/Base58');
 Object.defineProperty(module.exports, 'base58', {
   get: function() {
-    console.log('base58 (with a lower-case "b") is deprecated. Use bitcore.Base58 (capital "B") instead.');
+    console.log('base58 (with a lower-case "b") is deprecated. Use clamcore.Base58 (capital "B") instead.');
     return require('./lib/Base58');
   }
 });
@@ -49,7 +49,7 @@ requireWhenAccessed('HierarchicalKey', './lib/HierarchicalKey');
 requireWhenAccessed('BIP21', './lib/BIP21');
 Object.defineProperty(module.exports, 'BIP32', {
   get: function() {
-    console.log('BIP32 is deprecated. Use bitcore.HierarchicalKey instead.');
+    console.log('BIP32 is deprecated. Use clamcore.HierarchicalKey instead.');
     return require('./lib/HierarchicalKey');
   }
 });
