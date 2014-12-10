@@ -12,7 +12,7 @@
     <script src="../../browser/bundle.js"></script>
 
     <script type="text/javascript">
-      var Address = require('bitcore').Address;
+      var Address = require('clamcore').Address;
 
       var print = function (s,s2,s3) {
         var div = document.getElementById('content');
@@ -21,9 +21,9 @@
 
       print('<hr> <h1>Address</h1>' );
       var addrStrings = [
-        "1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa",
-        "1A1zP1eP5QGefi2DMPTfTL5SLmv7Dixxxx",
-        "A1zP1eP5QGefi2DMPTfTL5SLmv7Dixxxx",
+        "xQnuw69VWxB17wutqRv8oXQ7RNhJtMbvPf",
+        "xQnuw69VWxB17wutqRv8oXQ7RNhJtMxxxx",
+        "Qnuw69VWxB17wutqRv8oXQ7RNhJtMxxxx",
         "1600 Pennsylvania Ave NW",
       ].map(function(addr) {
         return new Address(addr);
@@ -43,7 +43,7 @@
 /*
       Using bitcore root module
 */
-      var bitcore = require('bitcore');
+      var bitcore = require('clamcore');
       var Key = bitcore.Key;
       var k = bitcore.Key.generateSync();
 k.private = new bitcore.Buffer('8d76eb9ddfa64fd29f4c541eac2b03ffdd1810dd19b01a10593fdb08f6be25f5','hex');
@@ -80,7 +80,7 @@ k.private = new bitcore.Buffer('8d76eb9ddfa64fd29f4c541eac2b03ffdd1810dd19b01a10
       var networks  = bitcore.networks;
 
 
-      var priv = 'L4cEVwoNDeYdCQfFJAGkGKPnE2TmqLEuBn4znQChD2ojjQRJVKpU';
+      var priv = 'LpZx4jr9r3Sx9fiVud5M7LMU56Ti9ChMSP387rtzc2gxtXZAScgQ';
       var s = new WalletKey({
         network: networks.livenet
       });
