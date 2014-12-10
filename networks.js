@@ -6,56 +6,50 @@ var hex = function(hex) {
 
 exports.livenet = {
   name: 'livenet',
-  magic: hex('f9beb4d9'),
-  addressVersion: 0x00,
-  privKeyVersion: 128,
+  magic: hex('03223515'),
+  addressVersion: 0x89,
+  privKeyVersion: 133,
   P2SHVersion: 5,
   hkeyPublicVersion: 0x0488b21e,
   hkeyPrivateVersion: 0x0488ade4,
   genesisBlock: {
-    hash: hex('6FE28C0AB6F1B372C1A6A246AE63F74F931E8365E15A089C68D6190000000000'),
-    merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
+    hash: hex('35DB6998FB0F967BDAA9B5AE669988ADA9EC9897A32452A323D8B3E63C0C0000'),
+    merkle_root: hex('96FF1913BB893B918E53FA3DFE3AB4E9CB6A6C48B0BDB8EBA6E453FD2AB310EF'),
     height: 0,
-    nonce: 2083236893,
+    nonce: 2054231,
     version: 1,
     prev_hash: buffertools.fill(new Buffer(32), 0),
-    timestamp: 1231006505,
+    timestamp: 1397512438,
     bits: 486604799,
   },
   dnsSeeds: [
-    'seed.bitcoin.sipa.be',
-    'dnsseed.bluematt.me',
-    'dnsseed.bitcoin.dashjr.org',
-    'seed.bitcoinstats.com',
-    'seed.bitnodes.io',
-    'bitseed.xf2.org'
+    ''
   ],
-  defaultClientPort: 8333
+  defaultClientPort: 31174
 };
 
 exports.mainnet = exports.livenet;
 
 exports.testnet = {
   name: 'testnet',
-  magic: hex('0b110907'),
+  magic: hex('c4f1c0df'),
   addressVersion: 0x6f,
   privKeyVersion: 239,
   P2SHVersion: 196,
   hkeyPublicVersion: 0x043587cf,
   hkeyPrivateVersion: 0x04358394,
   genesisBlock: {
-    hash: hex('43497FD7F826957108F4A30FD9CEC3AEBA79972084E90EAD01EA330900000000'),
+    hash: hex('41245567CA6B9539D148AE4E591295F6F3EB2CA507EBCAFE523672145B130000'),
     merkle_root: hex('3BA3EDFD7A7B12B27AC72C3E67768F617FC81BC3888A51323A9FB8AA4B1E5E4A'),
     height: 0,
-    nonce: 414098458,
+    nonce: 1279100,
     version: 1,
     prev_hash: buffertools.fill(new Buffer(32), 0),
     timestamp: 1296688602,
     bits: 486604799,
   },
   dnsSeeds: [
-    'testnet-seed.bitcoin.petertodd.org',
-    'testnet-seed.bluematt.me'
+    ''
   ],
-  defaultClientPort: 18333
+  defaultClientPort: 25714
 };
