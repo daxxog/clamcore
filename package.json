@@ -37,7 +37,7 @@
     },
     {
       "name": "Tyler Willis",
-      "email": "kefkius@mail.com"
+      "email": "l0rdicon@mail.com"
     }
   ],
   "keywords": [
@@ -51,7 +51,7 @@
   "main": "clamcore.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kefkius/clamcore.git"
+    "url": "https://github.com/l0rdicon/clamcore.git"
   },
   "scripts": {
     "install": "node-gyp rebuild",
