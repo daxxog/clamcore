@@ -3,13 +3,13 @@
 
 var run = function() {
   // Replace '../bitcore' with 'bitcore' if you use this code elsewhere.
-  var bitcore = require('../bitcore');
+  var bitcore = require('../clamcore');
   var Address = bitcore.Address;
 
   var addrs = [
-    '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
-    '1A1zP1eP5QGefi2DMPTfTL5SLmv7Dixxxx',
-    'A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa',
+    'xHKdGtUrM7kgi685hs6KtWNDZtDLY18RJU',
+    'xHKdGtUrM7kgi685hs6KtWNDZtDLY1xxxx',
+    'xHKdGtUrM7kgi685hs6KtWNDZtDLY18RJ',
     '1600 Pennsylvania Ave NW',
   ].map(function(addr) {
     return new Address(addr);
