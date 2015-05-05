@@ -2,7 +2,7 @@
 
 var chai = chai || require('chai');
 var should = chai.should();
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../clamcore');
 var BIP21 = bitcore.BIP21;
 
 describe('BIP21', function() {

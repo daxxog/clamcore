@@ -1,5 +1,5 @@
 var chai = chai || require('chai');
-var bitcore = bitcore || require('../bitcore');
+var bitcore = bitcore || require('../clamcore');
 var coinUtil = coinUtil || bitcore.util;
 var buffertools = require('buffertools');
 
