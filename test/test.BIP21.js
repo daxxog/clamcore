@@ -10,10 +10,10 @@ describe('BIP21', function() {
   it('should support livent address', function() {
     var uri;
 
-    uri = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
     uri.isValid().should.be.true;
     uri.address.network().name = 'livenet';
-    uri.address.toString().should.equal('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri.address.toString().should.equal('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
 
     uri = new BIP21('bitcoin:3FDFgmroEu5EFxxhHUkZL8vNJ3xrjUF3mB');
     uri.isValid().should.be.true;
@@ -36,20 +36,20 @@ describe('BIP21', function() {
   });
 
   it('should support double slash scheme', function() {
-    var uri = new BIP21('bitcoin://1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    var uri = new BIP21('bitcoin://xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
     uri.isValid().should.be.true;
-    uri.address.toString().should.equal('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri.address.toString().should.equal('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
   });
 
   it('should support numeric amounts', function() {
-    var uri = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?amount=12.10001');
+    var uri = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7?amount=12.10001');
     uri.isValid().should.be.true;
     should.exist(uri.data.amount);
     uri.data.amount.should.equal(12.10001);
   });
 
   it('should support extra arguments', function() {
-    var uri = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?message=Donation%20for%20project%20xyz&label=myLabel&other=xD');
+    var uri = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7?message=Donation%20for%20project%20xyz&label=myLabel&other=xD');
     uri.isValid().should.be.true;
 
     should.exist(uri.data.message);
@@ -69,7 +69,7 @@ describe('BIP21', function() {
   });
 
   it('should validate amount', function() {
-    var uri = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?amount=bad');
+    var uri = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7?amount=bad');
     uri.isValid().should.be.false;
     isNaN(uri.data.amount).should.be.true;
   });
@@ -84,43 +84,43 @@ describe('BIP21', function() {
 
   it('should build from an object', function() {
     var uri = new BIP21({
-      address: '1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj',
+      address: 'xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7',
       amount: 1.10001,
       message: 'Hello World'
     });
 
     uri.isValid().should.be.true;
-    uri.address.toString().should.equal('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri.address.toString().should.equal('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
     uri.data.amount.should.equal(1.10001);
     uri.data.message.should.equal('Hello World');
   });
 
   it('should build from an object', function() {
     var uri = new BIP21({
-      address: new bitcore.Address('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj'),
+      address: new bitcore.Address('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7'),
       amount: 1.10001,
       message: 'Hello World'
     });
 
     uri.isValid().should.be.true;
-    uri.address.toString().should.equal('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri.address.toString().should.equal('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
     uri.data.amount.should.equal(1.10001);
     uri.data.message.should.equal('Hello World');
   });
 
   it('should generate a valid URI', function() {
     new BIP21({
-      address: '1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj',
+      address: 'xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7',
     }).getURI().should.equal(
-    'bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj'
+    'bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7'
     );
 
     new BIP21({
-      address: '1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj',
+      address: 'xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7',
       amount: 1.10001,
       message: 'Hello World'
     }).getURI().should.equal(
-    'bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?amount=1.10001&message=Hello%20World'
+    'bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7?amount=1.10001&message=Hello%20World'
     );
 
     new BIP21({
@@ -131,8 +131,8 @@ describe('BIP21', function() {
   });
 
   it('should be case insensitive to protocol', function() {
-    var uri1 = new BIP21('bItcOin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
-    var uri2 = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    var uri1 = new BIP21('bItcOin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
+    var uri2 = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
 
     uri1.address.toString().should.equal(uri2.address.toString());
   });
@@ -141,12 +141,12 @@ describe('BIP21', function() {
     var uri = new BIP21();
     uri.isValid().should.be.false;
 
-    uri.setAddress('1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj');
+    uri.setAddress('xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7');
     uri.address.network().name.should.equal('livenet');
   });
 
   it('should check required arguments', function() {
-    var uri = new BIP21('bitcoin:1DP69gMMvSuYhbnxsi4EJEFufUAbDrEQfj?req-somethingyoudontunderstand=50&req-somethingelseyoudontget=999');
+    var uri = new BIP21('bitcoin:xLgj3ZBqCAPajytqEBgtjQYgtaTpaRurk7?req-somethingyoudontunderstand=50&req-somethingelseyoudontget=999');
     uri.isValid().should.be.false;
     uri.isValid([
       'req-somethingyoudontunderstand',

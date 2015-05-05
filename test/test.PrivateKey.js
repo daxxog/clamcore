@@ -37,21 +37,21 @@ describe('PrivateKey', function() {
     a.network().name.should.equal('testnet');
 
     //compress flag = on
-    var a = new PrivateKey('KwHXRTLNWKzxy2NUnnhFtxricC3Dod4Dd3D7RKzVkKDtWrZhuDHs');
+    var a = new PrivateKey('LgBgHG8sP6aeqcSKZAfisqL9rN3UyiQrSFKmDbiyChzSvWZyyAfb');
     a.network().name.should.equal('livenet');
-    var a = new PrivateKey('KwaLX8oyJNNCL9tcyYakQHJDTnrPAmZ2M1YK7NhEcT9j55LWqMZz');
+    var a = new PrivateKey('LgBgHG8sP6aeqcSKZAfisqL9rN3UyiQrSFKmDbiyChzSvWZyyAfb');
     a.network().name.should.equal('livenet');
 
     //compress flag = off
-    var a = new PrivateKey('5KS4jw2kT3VoEFUfzgSpX3GVi7qRYkTfwTBU7qxPKyvbGuiVj33');
+    var a = new PrivateKey('5V9nd6GuiAsvuMPCXaYpHeGNHgv1oGg3seY1LbPsJFxXk42JppV');
     a.network().name.should.equal('livenet');
-    var a = new PrivateKey('5JZsbYcnYN8Dz2YeSLZr6aswrVevedMUSFWxpie6SPpYRb2E4Gi');
+    var a = new PrivateKey('5V9nd6GuiAsvuMPCXaYpHeGNHgv1oGg3seY1LbPsJFxXk42JppV');
     a.network().name.should.equal('livenet');
   });
 
   describe('#isValid', function() {
     it('should detect this private key as valid', function() {
-      var privKey = new PrivateKey('5JQkUX6RNQC91xv4Www6Cgbxb6Eri6WBJjtPGqwfXVKBzT37cAf');
+      var privKey = new PrivateKey('5U8UMgLadXaGh4pb3r35yHbqAfKSxciZEwEvVbP9VmM8TX3n7kv');
       privKey.isValid().should.equal(true);
     });
   });

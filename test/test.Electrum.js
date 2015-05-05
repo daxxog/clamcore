@@ -38,19 +38,19 @@ describe('Electrum', function() {
     var elec = new Electrum(mpk);
     var pubkey = elec.generatePubKey(0);
     var addr = Address.fromPubKey(pubkey);
-    addr.as('base58').should.equal('15Ur7LV4hZFvFYQHkB12g1mdnKuHyHBDiW');
+    addr.as('base58').should.equal('xCnV1DKXyGjxHvWA6edh7C4R1SCXM7cmQk');
   });
   it('should generate correct (change) public keys at sequence 0,1,2', function() {
     var expected_values = {
       receiving: [
-        '15Ur7LV4hZFvFYQHkB12g1mdnKuHyHBDiW',
-        '19K48MhyXK4qChGCUJzAHxLFjbQRg9tb9F',
-        '1EfoxVmRVzYf1a1WELv2qMvEEpu2u5pXsy'
+        'xCnV1DKXyGjxHvWA6edh7C4R1SCXM7cmQk',
+        'xGch2EYSo2YsF5N4pncpj8d2xhhf2wUPKe',
+        'xMySrNbtmi2h3x7NapYhGYD1TwCGEU41ab'
       ],
       change: [
-        '138EGyTTyXFuqWBr8Jd7qmPbnfJUFmmuQg',
-        '12H7HZhtn7aNpTySXysKXiyxULybMktukh',
-        '1KMEUhmmiSdjX9fsv8aCAiYnVZnTTjqx7W'
+        'xARsArHwFEjwstHiUnFnGwgP1mbhhWkSXL',
+        'x9akBSYN3q4Qrr5JtTVyxuGjhTGpmZDjDX',
+        'xSesNacEzA7mZXmkGcCrbtqZig5gsVHBc8'
       ]
     };
     var elec = new Electrum(mpk);

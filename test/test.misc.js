@@ -103,7 +103,7 @@ describe('Miscelaneous stuff', function() {
     base58.encode(base58.decode(m)).should.equal(m);
   });
   it('should obtain the same string in base58Check roundtrip', function() {
-    var m = '1QCJj1gPZKx2EwzGo9Ri8mMBs39STvDYcv';
+    var m = 'xXVwctWrq3S4HL699d4NZwdy69SfnuPohg';
     base58Check.encode(base58Check.decode(m)).should.equal(m);
   });
   testdata.dataEncodeDecode.forEach(function(datum) {

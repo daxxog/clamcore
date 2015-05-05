@@ -58,28 +58,28 @@ describe('WalletKey', function() {
   it('should import priv key livenet / uncompressed', function() {
 
     //this is a WIF priv, compress flag = false 
-    var priv = '5KMpLZExnGzeU3oC9qZnKBt7yejLUS8boPiWag33TMX2XEK2Ayc';
+    var priv = '5V5YDiV83QNn99higjfn5nszZDovixLyjb53oRUXRdYxzHjKpq1';
     var s = new WalletKey();
     s.fromObj({ priv: priv});
     s.privKey.compressed.should.equal(false);
     var o = s.storeObj();
     o.priv.should.equal(priv);
     o.pub.should.equal('04470bbc100896e4df317526efa22f15aac3681ef02d230d00d15b4cba8eea1e88477523d644f20edb6b344f06bba77a9dff81be69d74282866b0b7f3e9d0d910b');
-    o.addr.should.equal('1v5GwPNomikEqmMe7h6q1jRw62WKTD6Xo');
+    o.addr.should.equal('x9DiApDr5VCnHDsDzbKmGC2DACKjkCp3x8');
   });
 
 
   it('should import priv key livenet / compressed', function() {
 
     //this is a WIF priv, compress flag = true
-    var priv = 'L4cEVwoNDeYdCQfFJAGkGKPnE2TmqLEuBn4znQChD2ojjQRJVKpU';
+    var priv = 'LoWPMkbs6R8K4zj64YFDFBsDUCU31RbXzzBeafwAfRaJ94NPabks';
     var s = new WalletKey();
     s.fromObj({ priv: priv});
     s.privKey.compressed.should.equal(true);
     var o = s.storeObj();
     o.priv.should.equal(priv);
     o.pub.should.equal('03d95e184cce34c3cfa58e9a277a09a7c5ed1b2a8134ea1e52887bc66fa3f47071');
-    o.addr.should.equal('1JEgFNDmEUdd6FvNhDBqSuw2uZ4yisSr7A');
+    o.addr.should.equal('xRYK9F4EWC7f8e2F3gpVt6Dp8fNDAEbTz5');
   });
 
 

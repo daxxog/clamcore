@@ -37,11 +37,11 @@ var chaincode = '84ac14bc4b388b33da099a0b4ee3b507284d99e1476639e36e5ca5e6af86481
  * This is some addresses generated from the wallet:
  */
 var address = [
-  '1PUzLkds8eHGjHPaW7v7h23bzmHjrRMVqz',
-  '1CGrip2uQUwhP2f3ARfbcrmtdwvWzELRmj',
-  '1BfBauMP4PX1ZBYrqH4K4R8KWrFfskrs7E',
-  '15emDCBVgBJLDP5cKxuwZ4Q77sfqEcwZvC',
-  '16tDJhMYBv1szZgRZCohWrzEvzX2bG7vEQ'
+  'xWndEdULQMmJmfVSrbYn8CLPDsayKNJsdh',
+  'xKaVcgsNgCRjRQkuWuJG434fs4DkLab28t',
+  'xJxpUnBrL713bZejBkgyVbR6jxYuGSDXRY',
+  'xCxQ751xwtnNFmBUgSYbzEgtLyy4cH4JBM',
+  'xEBrCaC1TdVv2wnHugSMx3H2A6pFx6pM9v'
 ];
 
 var instance, fromseed, first;
