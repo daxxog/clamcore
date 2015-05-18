@@ -216,7 +216,7 @@ describe('PrivateKey', function() {
     it('should output this known livenet address correctly', function() {
       var privkey = PrivateKey.fromWIF('L3T1s1TYP9oyhHpXgkyLoJFGniEgkv2Jhi138d7R2yJ9F4QdDU2m');
       var address = privkey.toAddress();
-      address.toString().should.equal('1A6ut1tWnUq1SEQLMr4ttDh24wcbJ5o9TT');
+      address.toString().should.equal('xHQYmtiz4CK3UcWCiKhZKPyoJ3upkNXAcQ');
     });
 
     it('should output this known testnet address correctly', function() {
@@ -383,7 +383,7 @@ describe('PrivateKey', function() {
 
   it('creates an address as expected from WIF, livenet', function() {
     var privkey = new PrivateKey('5J2NYGstJg7aJQEqNwYp4enG5BSfFdKXVTtBLvHicnRGD5kjxi6');
-    privkey.publicKey.toAddress().toString().should.equal('135bwugFCmhmNU3SeCsJeTqvo5ViymgwZ9');
+    privkey.publicKey.toAddress().toString().should.equal('xAPEqnWiUVBoQr9JzgVy5e8i2BnxHLcy4s');
   });
 
   it('creates an address as expected from WIF, testnet', function() {
