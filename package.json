@@ -2,7 +2,7 @@
   "name": "bitcore",
   "version": "0.12.5",
   "description": "A pure and powerful JavaScript Bitcoin library.",
-  "author": "BitPay <dev@bitpay.com>",
+  "author": "daXXog <david@volminator.com>",
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
@@ -54,10 +54,14 @@
     {
       "name": "Wei Lu",
       "email": "luwei.here@gmail.com"
+    },
+    {
+      "name": "Tyler Willis",
+      "email": "kefkius@mail.com"
     }
   ],
   "keywords": [
-    "bitcoin",
+    "clam",
     "transaction",
     "address",
     "p2p",
@@ -73,7 +77,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/daxxog/clamcore.git"
   },
   "browser": {
     "request": "browser-request"
