@@ -1,18 +1,18 @@
 {
-  "name": "bitcore",
-  "main": "./bitcore.min.js",
+  "name": "clamcore",
+  "main": "./clamcore.min.js",
   "version": "0.12.5",
-  "homepage": "http://bitcore.io",
+  "homepage": "http://clamsight.com/",
   "authors": [
     "BitPay, Inc."
   ],
-  "description": "A pure, powerful core for your bitcoin project.",
+  "description": "A pure, powerful core for your CLAM project.",
   "moduleType": [
     "globals"
   ],
   "keywords": [
-    "bitcoin",
-    "bitcore",
+    "clam",
+    "clamcore",
     "btc",
     "satoshi"
   ],
