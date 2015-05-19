@@ -1,5 +1,5 @@
 
 
-var bitcoreTasks = require('bitcore-build');
+var clamcoreTasks = require('clamcore-build');
 
-bitcoreTasks();
+clamcoreTasks();
