@@ -3,7 +3,7 @@ Clamcore
 
 [![NPM Package](https://img.shields.io/npm/v/clamcore.svg?style=flat-square)](https://www.npmjs.org/package/clamcore)
 [![Build Status](https://img.shields.io/travis/daxxog/clamcore.svg?branch=master&style=flat-square)](https://travis-ci.org/daxxog/clamcore)
-[![Coverage Status](https://img.shields.io/coveralls/daxxog/clamcore.svg?style=flat-square)](https://coveralls.io/r/daxxog/clamcore)
+[![Coverage Status](https://coveralls.io/repos/daxxog/clamcore/badge.svg?branch=dev-1)](https://coveralls.io/r/daxxog/clamcore?branch=dev-1)
 
 
 A pure and powerful JavaScript CLAM library.
