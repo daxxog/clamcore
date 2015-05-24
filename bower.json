@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "clamcore",
   "main": "./clamcore.min.js",
   "version": "0.12.5",
   "homepage": "http://clamsight.com/",
+=======
+  "name": "bitcore",
+  "main": "./bitcore.min.js",
+  "version": "0.12.6",
+  "homepage": "http://bitcore.io",
+>>>>>>> master
   "authors": [
     "BitPay, Inc."
   ],

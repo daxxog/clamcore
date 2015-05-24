@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "clamcore",
   "version": "0.12.5",
   "description": "A pure and powerful JavaScript CLAM library.",
   "author": "daXXog <david@volminator.com>",
+=======
+  "name": "bitcore",
+  "version": "0.12.6",
+  "description": "A pure and powerful JavaScript Bitcoin library.",
+  "author": "BitPay <dev@bitpay.com>",
+>>>>>>> master
   "main": "index.js",
   "scripts": {
     "lint": "gulp lint",
