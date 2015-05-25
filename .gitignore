@@ -16,8 +16,11 @@ report
 .DS_Store
 
 
-bitcore.js
-bitcore.min.js
-bitcore.js.sig
-bitcore.min.js.sig
+clamcore.js
+clamcore.min.js
+clamcore.js.sig
+clamcore.min.js.sig
 tests.js
+
+browser/
+build/
