@@ -1,0 +1,17 @@
+CLAMSIGHT TODO
+==============
+
+[ ] Updates for PoS 854980fea799fa40c0f15275aac8f63353464ea9
+[ ] add time, clamspeech to txs d765eb643b4c1ac43d0ce123a968d88094c710f8
+[ ] rebranding
+[ ] fix modules
+ - [ ] clamcore-payment-protocol
+ - [ ] clamcore-p2p
+ - [ ] clamcore-mnemonic
+ - [ ] clamcore-ecies
+ - [ ] clamcore-channel
+ - [ ] clamcore-explorers
+ - [ ] clamcore-message
+[ ] migrate other bitcore stuff
+ - [ ] clamsight
+ - [ ] clamcore-node
