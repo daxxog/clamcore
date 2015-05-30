@@ -1,6 +1,6 @@
 {
   "name": "clamcore",
-  "version": "0.12.6",
+  "version": "0.12.7",
   "description": "A pure and powerful JavaScript CLAM library.",
   "author": "daXXog <david@volminator.com>",
   "main": "index.js",
