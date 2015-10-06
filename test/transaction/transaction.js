@@ -62,9 +62,17 @@ describe('Transaction', function() {
     testTransaction.getFee().should.equal(10000);
   });
 
+  it('will return zero as the fee for a coinbase', function() {
+    // block #2: 0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098
+    var coinbaseTransaction = new Transaction('01000000010000000000000000000000000000000000000000000000000000000000000000ffffffff0704ffff001d0104ffffffff0100f2052a0100000043410496b538e853519c726a2c91e61ec11600ae1390813a627c66fb8be7947be63c52da7589379515d4e0a604f8141781e62294721166bf621e73a82cbf2342c858eeac00000000');
+    coinbaseTransaction.getFee().should.equal(0);
+  });
+
   it('serialize to Object roundtrip', function() {
-    new Transaction(testTransaction.toObject()).uncheckedSerialize()
-      .should.equal(testTransaction.uncheckedSerialize());
+    var a = testTransaction.toObject();
+    var newTransaction = new Transaction(a);
+    var b = newTransaction.toObject();
+    a.should.deep.equal(b);
   });
 
   it('constructor returns a shallow copy of another transaction', function() {
@@ -576,7 +584,7 @@ describe('Transaction', function() {
     it('serializes the `change` information', function() {
       var transaction = new Transaction();
       transaction.change(changeAddress);
-      expect(JSON.parse(transaction.toJSON()).changeScript).to.equal(Script.fromAddress(changeAddress).toString());
+      expect(transaction.toJSON().changeScript).to.equal(Script.fromAddress(changeAddress).toString());
       expect(new Transaction(transaction.toJSON()).uncheckedSerialize()).to.equal(transaction.uncheckedSerialize());
     });
     it('serializes correctly p2sh multisig signed tx', function() {
@@ -746,6 +754,40 @@ describe('Transaction', function() {
         return new Transaction().lockUntilBlockHeight(-1);
       }).to.throw(errors.Transaction.NLockTimeOutOfRange);
     });
+    it('has a non-max sequenceNumber for effective date locktime tx', function() {
+      var transaction = new Transaction()
+        .from(simpleUtxoWith1BTC)
+        .lockUntilDate(date);
+      transaction.inputs[0].sequenceNumber
+        .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER);
+    });
+    it('has a non-max sequenceNumber for effective blockheight locktime tx', function() {
+      var transaction = new Transaction()
+        .from(simpleUtxoWith1BTC)
+        .lockUntilBlockHeight(blockHeight);
+      transaction.inputs[0].sequenceNumber
+        .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER);
+    });
+    it('should serialize correctly for date locktime ', function() {
+      var transaction= new Transaction()
+        .from(simpleUtxoWith1BTC)
+        .lockUntilDate(date);
+      var serialized_tx = transaction.uncheckedSerialize();
+      var copy = new Transaction(serialized_tx);
+      serialized_tx.should.equal(copy.uncheckedSerialize());
+      copy.inputs[0].sequenceNumber
+      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER)
+    });
+    it('should serialize correctly for a block height locktime', function() {
+      var transaction= new Transaction()
+        .from(simpleUtxoWith1BTC)
+        .lockUntilBlockHeight(blockHeight);
+      var serialized_tx = transaction.uncheckedSerialize();
+      var copy = new Transaction(serialized_tx);
+      serialized_tx.should.equal(copy.uncheckedSerialize());
+      copy.inputs[0].sequenceNumber
+      .should.equal(Transaction.Input.DEFAULT_LOCKTIME_SEQNUMBER)
+    });
   });
 
   it('handles anyone-can-spend utxo', function() {
@@ -757,8 +799,17 @@ describe('Transaction', function() {
 
   it('handles unsupported utxo in tx object', function() {
     var transaction = new Transaction();
-    transaction.fromJSON.bind(transaction, unsupportedTxObj)
+    transaction.fromObject.bind(transaction, JSON.parse(unsupportedTxObj))
       .should.throw('Unsupported input script type: OP_1 OP_ADD OP_2 OP_EQUAL');
+  });
+
+  it('will error if object hash does not match transaction hash', function() {
+    var tx = new Transaction(tx_1_hex);
+    var txObj = tx.toObject();
+    txObj.hash = 'a477af6b2667c29670467e4e0728b685ee07b240235771862318e29ddbe58458';
+    (function() {
+      var tx2 = new Transaction(txObj);
+    }).should.throw('Hash in object does not match transaction hash');
   });
 
   describe('inputAmount + outputAmount', function() {
